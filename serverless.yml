@@ -15,7 +15,7 @@ service: doormantest
 
 custom:
   pythonRequirements:
-    pythonBin: python
+    pythonBin: python3
 
 provider:
   name: aws
@@ -63,7 +63,6 @@ provider:
     SLACK_CHANNEL_ID: ${env:SLACK_CHANNEL_ID}
     SLACK_TRAINING_CHANNEL_ID: ${env:SLACK_TRAINING_CHANNEL_ID}
     REKOGNITION_COLLECTION_ID: ${env:REKOGNITION_COLLECTION_ID}
-    DOOR_ID: ${env:DOOR_ID}
 # you can add packaging information here
 #package:
 #  include:
@@ -102,7 +101,7 @@ functions:
   find-person:
     handler: find_person.function_handler
     runtime: python2.7
-    role: arn:aws:iam::425431128429:role/service-role/AWSDeepLensLambdaRole
+    role: "arn:aws:iam::425431128429:role/service-role/AWSDeepLensLambdaRole"
     
 
 # resources:

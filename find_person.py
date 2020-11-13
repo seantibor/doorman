@@ -15,11 +15,10 @@ import greengrasssdk
 import time
 import base64
 from datetime import datetime, timedelta
-from botocore.session import Session
+import boto3
 
 # Setup the S3 client
-session = Session()
-s3 = session.create_client('s3')
+s3 = boto3.client('s3')
 s3_bucket = os.environ['BUCKET_NAME']
 #rekognition_collection_id = os.environ['REKOGNITION_COLLECTION_ID']
 #rekognition = session.create_client('rekognition')
@@ -163,7 +162,7 @@ def greengrass_infinite_infer_run():
                                 gray = cv2.cvtColor(person, cv2.COLOR_BGR2GRAY)
                                 faces = face_cascade.detectMultiScale(gray, 1.1, 5)
 
-                                if len(faces) != 1:
+                                if len(faces) < 1:
                                     client.publish(topic=iot_topic, payload="Skipping, no faces")
                                     continue
 

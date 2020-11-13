@@ -9,7 +9,6 @@ slack_token = os.environ['SLACK_API_TOKEN']
 slack_channel_id = os.environ['SLACK_CHANNEL_ID']
 slack_training_channel_id = os.environ['SLACK_TRAINING_CHANNEL_ID']
 rekognition_collection_id = os.environ['REKOGNITION_COLLECTION_ID']
-door_id = os.environ['DOOR_ID']
 
 def guess(event, context):
     client = boto3.client('rekognition')

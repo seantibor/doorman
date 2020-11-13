@@ -40,3 +40,11 @@ Architecture
 Video
 -----
 [![Video](https://img.youtube.com/vi/UXVD22jDbu8/0.jpg)](https://www.youtube.com/watch?v=UXVD22jDbu8)
+
+TODO
+----
+- Move from Slack to Google Rooms
+- Rekognize multiple faces in image
+- Include PPE test
+- use IoT to track people currently seen in room
+- 
